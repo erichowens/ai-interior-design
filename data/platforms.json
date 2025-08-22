@@ -1,0 +1,1149 @@
+{
+  "lastUpdated": "2025-08-21T10:00:00Z",
+  "platforms": [
+    {
+      "id": "roomgpt",
+      "name": "RoomGPT",
+      "tagline": "Open-source speed demon",
+      "url": "https://roomgpt.io",
+      "logo": "https://roomgpt.io/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 25,
+          "unit": "seconds",
+          "percentile": 95
+        },
+        "pricePerRender": 0.30,
+        "monthlyUsers": 125000,
+        "accuracy": 85,
+        "satisfaction": 4.2
+      },
+      "capabilities": {
+        "styles": 9,
+        "resolution": "512x512",
+        "apiAccess": true,
+        "batchProcessing": true,
+        "mobileApp": true,
+        "arPreview": false,
+        "shoppingLinks": false,
+        "cadExport": false,
+        "collaboration": false,
+        "3dModeling": false
+      },
+      "pricing": {
+        "free": {
+          "renders": 3,
+          "resolution": "512x512",
+          "features": ["Basic styles", "Watermark"]
+        },
+        "starter": {
+          "price": 9,
+          "period": "month",
+          "renders": 30,
+          "resolution": "512x512",
+          "features": ["All styles", "No watermark", "Priority queue"]
+        },
+        "pro": {
+          "price": 29,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "1024x1024",
+          "features": ["API access", "Batch processing", "Commercial use"]
+        }
+      },
+      "technology": {
+        "model": "ControlNet ML",
+        "framework": "Replicate",
+        "hosting": "Vercel",
+        "openSource": true,
+        "githubStars": 11200
+      },
+      "samples": [
+        "https://roomgpt.io/og-image.png",
+        "https://roomgpt.io/sample-1.png",
+        "https://roomgpt.io/sample-2.png"
+      ],
+      "bestFor": ["Rapid prototyping", "Developers", "Content creators"],
+      "limitations": ["Lower resolution", "No shopping integration", "Limited styles"]
+    },
+    {
+      "id": "paintit",
+      "name": "Paintit.ai",
+      "tagline": "Shop while you design",
+      "url": "https://paintit.ai",
+      "logo": "https://paintit.ai/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 90,
+          "unit": "seconds",
+          "percentile": 40
+        },
+        "pricePerRender": 0.23,
+        "monthlyUsers": 85000,
+        "accuracy": 92,
+        "satisfaction": 4.5
+      },
+      "capabilities": {
+        "styles": 15,
+        "resolution": "1024x1024",
+        "apiAccess": "limited",
+        "batchProcessing": false,
+        "mobileApp": true,
+        "arPreview": false,
+        "shoppingLinks": true,
+        "cadExport": false,
+        "collaboration": false,
+        "3dModeling": false
+      },
+      "pricing": {
+        "free": {
+          "renders": 5,
+          "resolution": "768x768",
+          "features": ["5 styles", "Shopping links"]
+        },
+        "weekly": {
+          "price": 6.99,
+          "period": "week",
+          "renders": 50,
+          "resolution": "1024x1024",
+          "features": ["All styles", "Priority support", "HD exports"]
+        },
+        "monthly": {
+          "price": 24.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "2048x2048",
+          "features": ["Widget API", "White label", "Bulk export"]
+        }
+      },
+      "technology": {
+        "model": "Proprietary AI",
+        "framework": "Custom",
+        "hosting": "AWS",
+        "openSource": false,
+        "partnerships": ["Wayfair", "West Elm", "CB2"]
+      },
+      "samples": [
+        "https://cdn.paintit.ai/gallery/modern-living-room.jpg",
+        "https://cdn.paintit.ai/gallery/bedroom-makeover.jpg",
+        "https://cdn.paintit.ai/gallery/kitchen-redesign.jpg"
+      ],
+      "bestFor": ["Homeowners", "Real estate agents", "Interior shoppers"],
+      "limitations": ["Slower generation", "No API for developers", "Expensive weekly pricing"]
+    },
+    {
+      "id": "foyr",
+      "name": "Foyr Neo",
+      "tagline": "Enterprise-grade design suite",
+      "url": "https://foyr.com/neo",
+      "logo": "https://foyr.com/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 37,
+          "unit": "seconds",
+          "percentile": 75
+        },
+        "pricePerRender": 1.63,
+        "monthlyUsers": 45000,
+        "accuracy": 96,
+        "satisfaction": 4.7
+      },
+      "capabilities": {
+        "styles": 50,
+        "resolution": "4096x4096",
+        "apiAccess": "enterprise",
+        "batchProcessing": true,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": true,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": 0,
+          "trial": "14 days",
+          "features": ["Full access trial"]
+        },
+        "professional": {
+          "price": 49,
+          "period": "month",
+          "renders": 100,
+          "resolution": "2048x2048",
+          "features": ["3D modeling", "Material library", "Cloud storage"]
+        },
+        "business": {
+          "price": 99,
+          "period": "month",
+          "renders": 500,
+          "resolution": "4096x4096",
+          "features": ["Team collaboration", "CAD export", "VR walkthrough", "API access"]
+        },
+        "enterprise": {
+          "price": "custom",
+          "period": "custom",
+          "renders": "unlimited",
+          "features": ["White label", "On-premise", "Training", "SLA"]
+        }
+      },
+      "technology": {
+        "model": "Hybrid AI/3D",
+        "framework": "Unity + Custom AI",
+        "hosting": "Azure",
+        "openSource": false,
+        "certifications": ["ISO 27001", "SOC 2"]
+      },
+      "samples": [
+        "https://cdn.foyr.com/public/neo/gallery/luxury-bedroom.webp",
+        "https://cdn.foyr.com/public/neo/gallery/modern-office.webp",
+        "https://cdn.foyr.com/public/neo/gallery/retail-space.webp"
+      ],
+      "bestFor": ["Design firms", "Architects", "Enterprise teams"],
+      "limitations": ["High price point", "Learning curve", "Overkill for casual users"]
+    },
+    {
+      "id": "interior-ai",
+      "name": "Interior AI",
+      "tagline": "Stable Diffusion for interiors",
+      "url": "https://interiorai.com",
+      "logo": "https://interiorai.com/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 30,
+          "unit": "seconds",
+          "percentile": 85
+        },
+        "pricePerRender": 0.58,
+        "monthlyUsers": 95000,
+        "accuracy": 88,
+        "satisfaction": 4.3
+      },
+      "capabilities": {
+        "styles": 16,
+        "resolution": "1024x1024",
+        "apiAccess": "coming",
+        "batchProcessing": true,
+        "mobileApp": false,
+        "arPreview": false,
+        "shoppingLinks": false,
+        "cadExport": false,
+        "collaboration": false,
+        "3dModeling": false
+      },
+      "pricing": {
+        "free": {
+          "renders": 5,
+          "resolution": "768x768",
+          "features": ["8 styles", "Basic editing"]
+        },
+        "pro": {
+          "price": 29,
+          "period": "month",
+          "renders": 200,
+          "resolution": "1024x1024",
+          "features": ["All styles", "Batch processing", "High priority"]
+        },
+        "unlimited": {
+          "price": 99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "2048x2048",
+          "features": ["4K exports", "API beta access", "Custom models"]
+        }
+      },
+      "technology": {
+        "model": "Stable Diffusion XL",
+        "framework": "Custom LoRA",
+        "hosting": "GPU cluster",
+        "openSource": false,
+        "modelVersion": "SDXL 1.0 + Custom"
+      },
+      "samples": [
+        "https://interiorai.com/images/examples/modern-transformation.jpg",
+        "https://interiorai.com/images/examples/scandinavian-style.jpg",
+        "https://interiorai.com/images/examples/industrial-loft.jpg"
+      ],
+      "bestFor": ["Real estate staging", "Property managers", "Realtors"],
+      "limitations": ["No mobile app", "API not ready", "Limited integrations"]
+    },
+    {
+      "id": "homestyler",
+      "name": "HomeStyler",
+      "tagline": "3D design meets AI magic",
+      "url": "https://www.homestyler.com",
+      "logo": "https://homestyler.com/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 52,
+          "unit": "seconds",
+          "percentile": 60
+        },
+        "pricePerRender": 0.33,
+        "monthlyUsers": 350000,
+        "accuracy": 90,
+        "satisfaction": 4.4
+      },
+      "capabilities": {
+        "styles": 20,
+        "resolution": "2048x2048",
+        "apiAccess": false,
+        "batchProcessing": "limited",
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": true,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": "unlimited",
+          "resolution": "1024x1024",
+          "features": ["Basic tools", "Watermark", "Community access"]
+        },
+        "plus": {
+          "price": 9.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "2048x2048",
+          "features": ["No watermark", "Advanced tools", "Cloud storage"]
+        },
+        "pro": {
+          "price": 19.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "4096x4096",
+          "features": ["CAD export", "Team features", "Priority render"]
+        },
+        "enterprise": {
+          "price": 199,
+          "period": "month",
+          "renders": "unlimited",
+          "features": ["API access", "Training", "Dedicated support"]
+        }
+      },
+      "technology": {
+        "model": "Custom CNN + 3D",
+        "framework": "WebGL + AI",
+        "hosting": "Alibaba Cloud",
+        "openSource": false,
+        "parent": "Autodesk"
+      },
+      "samples": [
+        "https://res.cloudinary.com/homestyler/image/upload/v1/gallery/modern-living.jpg",
+        "https://res.cloudinary.com/homestyler/image/upload/v1/gallery/bedroom-design.jpg",
+        "https://res.cloudinary.com/homestyler/image/upload/v1/gallery/kitchen-3d.jpg"
+      ],
+      "bestFor": ["Professional designers", "Architecture students", "Serious DIYers"],
+      "limitations": ["Complex interface", "Slower AI generation", "Heavy system requirements"]
+    },
+    {
+      "id": "planner5d",
+      "name": "Planner 5D",
+      "tagline": "Design made simple",
+      "url": "https://planner5d.com",
+      "logo": "https://planner5d.com/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 22,
+          "unit": "seconds",
+          "percentile": 92
+        },
+        "pricePerRender": 0.17,
+        "monthlyUsers": 420000,
+        "accuracy": 87,
+        "satisfaction": 4.3
+      },
+      "capabilities": {
+        "styles": 12,
+        "resolution": "1920x1080",
+        "apiAccess": true,
+        "batchProcessing": true,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": false,
+        "cadExport": true,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": "limited",
+          "resolution": "1024x768",
+          "features": ["Basic catalog", "2D/3D modes"]
+        },
+        "premium": {
+          "price": 6.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "1920x1080",
+          "features": ["Full catalog", "HD exports", "No ads"]
+        },
+        "premium_plus": {
+          "price": 14.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "3840x2160",
+          "features": ["AI features", "CAD export", "Priority support"]
+        },
+        "commercial": {
+          "price": 39.99,
+          "period": "month",
+          "renders": "unlimited",
+          "features": ["Commercial use", "API access", "Team tools"]
+        }
+      },
+      "technology": {
+        "model": "Neural Rendering",
+        "framework": "Custom WebGL",
+        "hosting": "AWS + CDN",
+        "openSource": false,
+        "downloads": 85000000
+      },
+      "samples": [
+        "https://planner5d.com/gallery/renders/ai-modern-apartment.jpg",
+        "https://planner5d.com/gallery/renders/ai-classic-home.jpg",
+        "https://planner5d.com/gallery/renders/ai-minimal-studio.jpg"
+      ],
+      "bestFor": ["Students", "First-time designers", "Mobile users"],
+      "limitations": ["Limited AI styles", "No shopping integration", "Basic AI compared to others"]
+    },
+    {
+      "id": "decormatters",
+      "name": "DecorMatters",
+      "tagline": "Gamified design experience",
+      "url": "https://www.decormatters.com",
+      "logo": "https://decormatters.com/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 45,
+          "unit": "seconds",
+          "percentile": 65
+        },
+        "pricePerRender": 0.25,
+        "monthlyUsers": 180000,
+        "accuracy": 83,
+        "satisfaction": 4.1
+      },
+      "capabilities": {
+        "styles": 10,
+        "resolution": "1024x1024",
+        "apiAccess": false,
+        "batchProcessing": false,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": false,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": "unlimited",
+          "resolution": "768x768",
+          "features": ["Basic tools", "Community", "Challenges"]
+        },
+        "pro": {
+          "price": 9.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "1024x1024",
+          "features": ["All items", "No ads", "Pro badge"]
+        },
+        "pro_plus": {
+          "price": 19.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "2048x2048",
+          "features": ["AI features", "Shopping rewards", "Early access"]
+        }
+      },
+      "technology": {
+        "model": "StyleGAN2",
+        "framework": "Mobile-first",
+        "hosting": "Google Cloud",
+        "openSource": false,
+        "gamification": true
+      },
+      "samples": [
+        "https://decormatters.com/cdn/challenge/winner-1.jpg",
+        "https://decormatters.com/cdn/challenge/winner-2.jpg",
+        "https://decormatters.com/cdn/challenge/winner-3.jpg"
+      ],
+      "bestFor": ["Casual designers", "Social sharers", "Bargain hunters"],
+      "limitations": ["Gamification may annoy pros", "Slower generation", "Limited export options"]
+    },
+    {
+      "id": "reimagine-home",
+      "name": "REimagine Home",
+      "tagline": "AI staging and virtual renovation",
+      "url": "https://www.reimaginehome.ai",
+      "logo": "https://reimaginehome.ai/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 15,
+          "unit": "seconds",
+          "percentile": 98
+        },
+        "pricePerRender": 0.40,
+        "monthlyUsers": 110000,
+        "accuracy": 91,
+        "satisfaction": 4.6
+      },
+      "capabilities": {
+        "styles": 25,
+        "resolution": "2048x2048",
+        "apiAccess": true,
+        "batchProcessing": true,
+        "mobileApp": false,
+        "arPreview": false,
+        "shoppingLinks": false,
+        "cadExport": false,
+        "collaboration": true,
+        "3dModeling": false
+      },
+      "pricing": {
+        "free": {
+          "renders": 3,
+          "resolution": "1024x1024",
+          "features": ["Basic styles", "Watermark"]
+        },
+        "starter": {
+          "price": 19,
+          "period": "month",
+          "renders": 50,
+          "resolution": "2048x2048",
+          "features": ["All styles", "No watermark", "Batch processing"]
+        },
+        "professional": {
+          "price": 79,
+          "period": "month",
+          "renders": 500,
+          "resolution": "4096x4096",
+          "features": ["API access", "Team features", "Priority support"]
+        }
+      },
+      "technology": {
+        "model": "Custom Diffusion Model",
+        "framework": "PyTorch",
+        "hosting": "AWS",
+        "openSource": false,
+        "specialization": "Virtual staging"
+      },
+      "samples": [
+        "https://reimaginehome.ai/assets/gallery/virtual-staging-1.jpg",
+        "https://reimaginehome.ai/assets/gallery/virtual-staging-2.jpg",
+        "https://reimaginehome.ai/assets/gallery/virtual-staging-3.jpg"
+      ],
+      "bestFor": ["Real estate agents", "Property staging", "Home sellers"],
+      "limitations": ["No mobile app", "Limited 3D features", "No shopping integration"]
+    },
+    {
+      "id": "collov-ai",
+      "name": "Collov AI",
+      "tagline": "Personalized design assistant",
+      "url": "https://collov.ai",
+      "logo": "https://collov.ai/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 35,
+          "unit": "seconds",
+          "percentile": 80
+        },
+        "pricePerRender": 0.28,
+        "monthlyUsers": 75000,
+        "accuracy": 89,
+        "satisfaction": 4.4
+      },
+      "capabilities": {
+        "styles": 18,
+        "resolution": "1536x1536",
+        "apiAccess": false,
+        "batchProcessing": true,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": false,
+        "collaboration": false,
+        "3dModeling": false
+      },
+      "pricing": {
+        "free": {
+          "renders": 10,
+          "resolution": "1024x1024",
+          "features": ["10 styles", "Basic editing"]
+        },
+        "premium": {
+          "price": 15.99,
+          "period": "month",
+          "renders": 100,
+          "resolution": "1536x1536",
+          "features": ["All styles", "Shopping links", "AR preview"]
+        },
+        "unlimited": {
+          "price": 39.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "2048x2048",
+          "features": ["Priority processing", "Custom styles", "White label"]
+        }
+      },
+      "technology": {
+        "model": "ControlNet + Custom",
+        "framework": "TensorFlow",
+        "hosting": "Google Cloud",
+        "openSource": false,
+        "partnerships": ["IKEA", "Target"]
+      },
+      "samples": [
+        "https://collov.ai/static/examples/personalized-living.jpg",
+        "https://collov.ai/static/examples/personalized-bedroom.jpg",
+        "https://collov.ai/static/examples/personalized-kitchen.jpg"
+      ],
+      "bestFor": ["DIY enthusiasts", "Budget renovators", "Style explorers"],
+      "limitations": ["No API access", "Limited professional features", "Slower than competitors"]
+    },
+    {
+      "id": "designai",
+      "name": "Design.AI",
+      "tagline": "Enterprise AI design platform",
+      "url": "https://design.ai",
+      "logo": "https://design.ai/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 28,
+          "unit": "seconds",
+          "percentile": 88
+        },
+        "pricePerRender": 0.95,
+        "monthlyUsers": 55000,
+        "accuracy": 94,
+        "satisfaction": 4.8
+      },
+      "capabilities": {
+        "styles": 40,
+        "resolution": "4096x4096",
+        "apiAccess": "enterprise",
+        "batchProcessing": true,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": true,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": 0,
+          "trial": "7 days",
+          "features": ["Limited access"]
+        },
+        "team": {
+          "price": 99,
+          "period": "month",
+          "renders": 200,
+          "resolution": "2048x2048",
+          "features": ["5 users", "Basic API", "Collaboration"]
+        },
+        "enterprise": {
+          "price": "custom",
+          "period": "custom",
+          "renders": "unlimited",
+          "features": ["Unlimited users", "Full API", "On-premise option", "SLA"]
+        }
+      },
+      "technology": {
+        "model": "Proprietary Neural Architecture",
+        "framework": "Custom ML Stack",
+        "hosting": "Multi-cloud",
+        "openSource": false,
+        "certifications": ["ISO 27001", "GDPR compliant"]
+      },
+      "samples": [
+        "https://design.ai/showcase/enterprise-office.webp",
+        "https://design.ai/showcase/enterprise-lobby.webp",
+        "https://design.ai/showcase/enterprise-meeting.webp"
+      ],
+      "bestFor": ["Enterprise teams", "Design agencies", "Large projects"],
+      "limitations": ["High price point", "Overkill for individuals", "Complex setup"]
+    },
+    {
+      "id": "spacely-ai",
+      "name": "Spacely AI",
+      "tagline": "3D room design powered by AI",
+      "url": "https://spacely.ai",
+      "logo": "https://spacely.ai/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 42,
+          "unit": "seconds",
+          "percentile": 70
+        },
+        "pricePerRender": 0.35,
+        "monthlyUsers": 65000,
+        "accuracy": 86,
+        "satisfaction": 4.2
+      },
+      "capabilities": {
+        "styles": 14,
+        "resolution": "1920x1080",
+        "apiAccess": true,
+        "batchProcessing": false,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": false,
+        "cadExport": true,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": 5,
+          "resolution": "1024x1024",
+          "features": ["Basic 3D tools", "5 styles"]
+        },
+        "pro": {
+          "price": 24.99,
+          "period": "month",
+          "renders": 150,
+          "resolution": "1920x1080",
+          "features": ["All styles", "CAD export", "VR preview"]
+        },
+        "studio": {
+          "price": 69.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "4K",
+          "features": ["API access", "Team collaboration", "Custom models"]
+        }
+      },
+      "technology": {
+        "model": "3D GAN + Diffusion",
+        "framework": "Unity + AI",
+        "hosting": "Azure",
+        "openSource": false,
+        "specialization": "3D visualization"
+      },
+      "samples": [
+        "https://spacely.ai/demos/3d-living-room.jpg",
+        "https://spacely.ai/demos/3d-bedroom-vr.jpg",
+        "https://spacely.ai/demos/3d-kitchen-render.jpg"
+      ],
+      "bestFor": ["3D enthusiasts", "VR/AR developers", "Game designers"],
+      "limitations": ["Slower generation", "Learning curve for 3D", "No shopping features"]
+    },
+    {
+      "id": "vizcom",
+      "name": "Vizcom",
+      "tagline": "Sketch to render in seconds",
+      "url": "https://www.vizcom.ai",
+      "logo": "https://vizcom.ai/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 12,
+          "unit": "seconds",
+          "percentile": 99
+        },
+        "pricePerRender": 0.50,
+        "monthlyUsers": 90000,
+        "accuracy": 87,
+        "satisfaction": 4.5
+      },
+      "capabilities": {
+        "styles": 20,
+        "resolution": "2048x2048",
+        "apiAccess": true,
+        "batchProcessing": true,
+        "mobileApp": false,
+        "arPreview": false,
+        "shoppingLinks": false,
+        "cadExport": false,
+        "collaboration": true,
+        "3dModeling": false
+      },
+      "pricing": {
+        "free": {
+          "renders": 10,
+          "resolution": "1024x1024",
+          "features": ["Basic rendering", "Watermark"]
+        },
+        "designer": {
+          "price": 39,
+          "period": "month",
+          "renders": 200,
+          "resolution": "2048x2048",
+          "features": ["All styles", "No watermark", "Priority queue"]
+        },
+        "studio": {
+          "price": 99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "4096x4096",
+          "features": ["API access", "Team seats", "Custom training"]
+        }
+      },
+      "technology": {
+        "model": "Sketch-to-Image AI",
+        "framework": "Custom pipeline",
+        "hosting": "AWS",
+        "openSource": false,
+        "specialization": "Sketch rendering"
+      },
+      "samples": [
+        "https://vizcom.ai/gallery/sketch-to-render-1.png",
+        "https://vizcom.ai/gallery/sketch-to-render-2.png",
+        "https://vizcom.ai/gallery/sketch-to-render-3.png"
+      ],
+      "bestFor": ["Concept artists", "Interior designers", "Quick iterations"],
+      "limitations": ["No mobile app", "Limited 3D features", "Requires sketching skills"]
+    },
+    {
+      "id": "coohom",
+      "name": "Coohom",
+      "tagline": "Cloud-based design platform",
+      "url": "https://www.coohom.com",
+      "logo": "https://coohom.com/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 48,
+          "unit": "seconds",
+          "percentile": 55
+        },
+        "pricePerRender": 0.42,
+        "monthlyUsers": 280000,
+        "accuracy": 93,
+        "satisfaction": 4.6
+      },
+      "capabilities": {
+        "styles": 30,
+        "resolution": "8K",
+        "apiAccess": true,
+        "batchProcessing": true,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": true,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": 3,
+          "resolution": "1080p",
+          "features": ["Basic tools", "Community"]
+        },
+        "personal": {
+          "price": 29,
+          "period": "month",
+          "renders": 100,
+          "resolution": "4K",
+          "features": ["Advanced tools", "Cloud storage", "Export"]
+        },
+        "business": {
+          "price": 139,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "8K",
+          "features": ["API", "White label", "Team management", "Training"]
+        }
+      },
+      "technology": {
+        "model": "Hybrid AI/3D rendering",
+        "framework": "WebGL + Cloud",
+        "hosting": "Alibaba Cloud",
+        "openSource": false,
+        "userBase": "Global"
+      },
+      "samples": [
+        "https://global.coohom.com/design/render/modern-apartment.jpg",
+        "https://global.coohom.com/design/render/luxury-villa.jpg",
+        "https://global.coohom.com/design/render/office-space.jpg"
+      ],
+      "bestFor": ["Professional designers", "Furniture retailers", "Architecture firms"],
+      "limitations": ["Slower rendering", "Complex interface", "Higher learning curve"]
+    },
+    {
+      "id": "modsy",
+      "name": "Modsy",
+      "tagline": "Personal interior design service",
+      "url": "https://www.modsy.com",
+      "logo": "https://modsy.com/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 72,
+          "unit": "seconds",
+          "percentile": 35
+        },
+        "pricePerRender": 1.20,
+        "monthlyUsers": 150000,
+        "accuracy": 95,
+        "satisfaction": 4.7
+      },
+      "capabilities": {
+        "styles": 35,
+        "resolution": "4K",
+        "apiAccess": false,
+        "batchProcessing": false,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": false,
+        "collaboration": false,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": 0,
+          "trial": "style quiz",
+          "features": ["Style assessment"]
+        },
+        "room": {
+          "price": 159,
+          "period": "per room",
+          "renders": 2,
+          "resolution": "4K",
+          "features": ["2 initial designs", "Unlimited revisions", "Shopping list"]
+        },
+        "package": {
+          "price": 395,
+          "period": "3 rooms",
+          "renders": 6,
+          "resolution": "4K",
+          "features": ["All room features", "Designer consultation", "3D walkthrough"]
+        }
+      },
+      "technology": {
+        "model": "Photorealistic 3D",
+        "framework": "Proprietary",
+        "hosting": "AWS",
+        "openSource": false,
+        "humanDesigners": true
+      },
+      "samples": [
+        "https://modsy.com/portfolio/modern-makeover.jpg",
+        "https://modsy.com/portfolio/transitional-design.jpg",
+        "https://modsy.com/portfolio/contemporary-room.jpg"
+      ],
+      "bestFor": ["Complete room makeovers", "Shopping assistance", "Design guidance"],
+      "limitations": ["No API", "Per-room pricing", "Slower turnaround"]
+    },
+    {
+      "id": "archi-ai",
+      "name": "Archi AI",
+      "tagline": "Architecture-focused AI design",
+      "url": "https://archi.ai",
+      "logo": "https://archi.ai/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 18,
+          "unit": "seconds",
+          "percentile": 96
+        },
+        "pricePerRender": 0.45,
+        "monthlyUsers": 40000,
+        "accuracy": 92,
+        "satisfaction": 4.5
+      },
+      "capabilities": {
+        "styles": 22,
+        "resolution": "4096x4096",
+        "apiAccess": true,
+        "batchProcessing": true,
+        "mobileApp": false,
+        "arPreview": false,
+        "shoppingLinks": false,
+        "cadExport": true,
+        "collaboration": true,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": 5,
+          "resolution": "1024x1024",
+          "features": ["Basic tools", "5 styles"]
+        },
+        "architect": {
+          "price": 49,
+          "period": "month",
+          "renders": 200,
+          "resolution": "4096x4096",
+          "features": ["All styles", "CAD export", "API access"]
+        },
+        "firm": {
+          "price": 299,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "8K",
+          "features": ["Team seats", "Custom models", "Priority support", "Training"]
+        }
+      },
+      "technology": {
+        "model": "Architecture-trained AI",
+        "framework": "Custom pipeline",
+        "hosting": "Google Cloud",
+        "openSource": false,
+        "specialization": "Architectural design"
+      },
+      "samples": [
+        "https://archi.ai/gallery/architectural-render-1.jpg",
+        "https://archi.ai/gallery/architectural-render-2.jpg",
+        "https://archi.ai/gallery/architectural-render-3.jpg"
+      ],
+      "bestFor": ["Architects", "Building designers", "Construction planning"],
+      "limitations": ["No mobile app", "Architecture-focused", "Limited furniture options"]
+    },
+    {
+      "id": "room-ai",
+      "name": "Room AI",
+      "tagline": "Instant room transformations",
+      "url": "https://room-ai.com",
+      "logo": "https://room-ai.com/logo.png",
+      "metrics": {
+        "speed": {
+          "value": 20,
+          "unit": "seconds",
+          "percentile": 94
+        },
+        "pricePerRender": 0.22,
+        "monthlyUsers": 125000,
+        "accuracy": 88,
+        "satisfaction": 4.3
+      },
+      "capabilities": {
+        "styles": 17,
+        "resolution": "2048x2048",
+        "apiAccess": true,
+        "batchProcessing": true,
+        "mobileApp": true,
+        "arPreview": false,
+        "shoppingLinks": false,
+        "cadExport": false,
+        "collaboration": false,
+        "3dModeling": false
+      },
+      "pricing": {
+        "free": {
+          "renders": 10,
+          "resolution": "1024x1024",
+          "features": ["10 styles", "Basic editing"]
+        },
+        "plus": {
+          "price": 12,
+          "period": "month",
+          "renders": 100,
+          "resolution": "2048x2048",
+          "features": ["All styles", "No watermark", "Batch processing"]
+        },
+        "pro": {
+          "price": 35,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "4096x4096",
+          "features": ["API access", "Priority queue", "Commercial license"]
+        }
+      },
+      "technology": {
+        "model": "Stable Diffusion Fine-tuned",
+        "framework": "Hugging Face",
+        "hosting": "Replicate",
+        "openSource": false,
+        "optimization": "Speed-optimized"
+      },
+      "samples": [
+        "https://room-ai.com/examples/instant-redesign-1.jpg",
+        "https://room-ai.com/examples/instant-redesign-2.jpg",
+        "https://room-ai.com/examples/instant-redesign-3.jpg"
+      ],
+      "bestFor": ["Quick redesigns", "Rental properties", "Social media content"],
+      "limitations": ["Limited advanced features", "No 3D", "Basic customization"]
+    },
+    {
+      "id": "ai-room-planner",
+      "name": "AI Room Planner",
+      "tagline": "Smart space optimization",
+      "url": "https://airoomplanner.com",
+      "logo": "https://airoomplanner.com/logo.svg",
+      "metrics": {
+        "speed": {
+          "value": 33,
+          "unit": "seconds",
+          "percentile": 82
+        },
+        "pricePerRender": 0.19,
+        "monthlyUsers": 98000,
+        "accuracy": 85,
+        "satisfaction": 4.1
+      },
+      "capabilities": {
+        "styles": 12,
+        "resolution": "1920x1080",
+        "apiAccess": false,
+        "batchProcessing": false,
+        "mobileApp": true,
+        "arPreview": true,
+        "shoppingLinks": true,
+        "cadExport": false,
+        "collaboration": false,
+        "3dModeling": true
+      },
+      "pricing": {
+        "free": {
+          "renders": "unlimited",
+          "resolution": "720p",
+          "features": ["Basic tools", "Ads", "Watermark"]
+        },
+        "premium": {
+          "price": 8.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "1080p",
+          "features": ["No ads", "No watermark", "Priority support"]
+        },
+        "business": {
+          "price": 29.99,
+          "period": "month",
+          "renders": "unlimited",
+          "resolution": "4K",
+          "features": ["Commercial use", "Bulk export", "Custom branding"]
+        }
+      },
+      "technology": {
+        "model": "Optimization AI",
+        "framework": "React Native",
+        "hosting": "Firebase",
+        "openSource": false,
+        "focus": "Space planning"
+      },
+      "samples": [
+        "https://airoomplanner.com/gallery/space-optimization-1.jpg",
+        "https://airoomplanner.com/gallery/space-optimization-2.jpg",
+        "https://airoomplanner.com/gallery/space-optimization-3.jpg"
+      ],
+      "bestFor": ["Small spaces", "Budget planning", "Quick layouts"],
+      "limitations": ["No API", "Limited styles", "Basic rendering quality"]
+    }
+  ],
+  "comparisonMetrics": {
+    "speed": {
+      "weight": 0.25,
+      "unit": "seconds",
+      "optimal": "lower"
+    },
+    "price": {
+      "weight": 0.25,
+      "unit": "USD/render",
+      "optimal": "lower"
+    },
+    "quality": {
+      "weight": 0.30,
+      "unit": "accuracy_score",
+      "optimal": "higher"
+    },
+    "features": {
+      "weight": 0.20,
+      "unit": "feature_count",
+      "optimal": "higher"
+    }
+  }
+}
