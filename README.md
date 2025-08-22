@@ -1,148 +1,192 @@
-# AI Interior Design Comparison Tool
+# AI Interior Design Platform Comparison Tool
 
-## 🚀 Quick Start for Claude Code
+A comprehensive comparison tool for AI interior design platforms. Compare 18 different tools by speed, pricing, accuracy, and features to help you choose the right one for your needs.
 
-### Step 1: Initialize MCPs
-You need these MCP servers for Claude Code:
-1. **Filesystem MCP** - Already included in Claude Code
-2. **GitHub MCP** (optional) - For version control
+## Live Demo
 
-### Step 2: Open in Claude Code
+🚀 **Ready to Deploy** - Follow the deployment instructions below to publish your site
+
+## Features
+
+- **18 AI Platforms Compared**: Comprehensive data on major AI interior design tools
+- **Key Metrics**: Speed, pricing per render, accuracy scores, and monthly users
+- **Multiple Views**: Toggle between grid and table views for easier comparison
+- **Smart Filtering**: Filter by free tier, speed, accuracy, budget, and professional features
+- **Sorting Options**: Sort by popularity, price, speed, or accuracy
+- **Detailed Information**: Expandable cards with full feature lists and limitations
+- **Use Case Recommendations**: Quick suggestions for homeowners, developers, and professionals
+
+## Platforms Included
+
+- RoomGPT
+- Decoratly
+- Interior AI
+- Reimagine Home
+- Foyr Neo
+- Vizcom
+- DecorMatters
+- Planner 5D
+- Modsy
+- HomeStyler
+- Coohom
+- REimagine Home
+- Paintit.ai
+- DesignSense AI
+- Space Designer 3D
+- Archi AI
+- DreamHouse AI
+- Virtual Staging AI
+
+## Tech Stack
+
+- **Frontend**: React 18 with Vite
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand
+- **Animations**: Framer Motion
+- **Routing**: React Router
+- **Deployment**: Vercel
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+ and npm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-cd ~/coding/ai_interior_design
-code .  # Opens in VSCode/Cursor with Claude Code
+git clone https://github.com/erichowens/ai-interior-design.git
+cd ai-interior-design
 ```
 
-### Step 3: Tell Claude Code This:
-
-> Build a React app with Vite and Tailwind for comparing AI interior design platforms. 
-> 
-> Use the PRD.md and technical-spec.md in this folder for requirements. The platforms.json in /data has all the platform information.
-> 
-> Key features to implement:
-> 1. Market growth hero chart (D3.js animated from $829M to $7.3B)
-> 2. Quick match wizard (3 questions to get platform recommendation)
-> 3. Platform cards with radar charts showing capabilities
-> 4. Side-by-side comparison mode (drag up to 3 platforms)
-> 5. ROI calculator for cost/benefit analysis
-> 
-> Use these external CDNs for images:
-> - Cloudinary for optimization: https://res.cloudinary.com/demo/image/fetch/
-> - Or use the sample URLs directly from platforms.json
-> 
-> Design system:
-> - Colors: Terracotta (#C65D00), Sage (#8B9A7B), Warm Gold (#D4A574)
-> - Fonts: Fraunces (serif headers), Inter (body)
-> - Mobile-first, accessible, fast (target: sub-2s load)
-> 
-> Start by:
-> 1. Setting up Vite + React + Tailwind
-> 2. Creating the component structure
-> 3. Loading platforms.json
-> 4. Building the Quick Match Wizard first (it's the MVP feature)
-> 
-> Deploy to Vercel when ready. Make it beautiful and functional!
-
-### Step 4: Image Hosting Setup
-
-#### Option A: Cloudinary (Recommended)
-1. Sign up for free at https://cloudinary.com
-2. Get your cloud name
-3. Use their fetch API: `https://res.cloudinary.com/YOUR_CLOUD_NAME/image/fetch/w_800,q_auto,f_auto/ORIGINAL_IMAGE_URL`
-
-#### Option B: GitHub Pages
-1. Create a separate repo for images
-2. Enable GitHub Pages
-3. Upload optimized images
-4. Use URLs like: `https://USERNAME.github.io/ai-interior-images/platform-name.webp`
-
-#### Option C: Direct Links
-- Use the sample URLs from platforms.json directly
-- Note: Some may not allow hotlinking
-
-### Step 5: Deployment
-
-#### Vercel (Recommended)
+2. Install dependencies:
 ```bash
-npm install -g vercel
-vercel
-# Follow prompts
+npm install
 ```
 
-#### Netlify
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+### Build for Production
+
 ```bash
 npm run build
-# Drag 'dist' folder to Netlify
 ```
 
-## 📁 Project Structure
+The built files will be in the `dist` directory.
+
+## Deployment
+
+The project is **ready to deploy**! The production build has been created in the `dist` folder.
+
+### Quick Deploy Script
+
+Run the deployment helper:
+```bash
+./deploy.sh
 ```
-ai_interior_design/
-├── PRD.md                 # Product requirements
-├── technical-spec.md      # Technical details
-├── README.md             # This file
+
+### Deploy to Vercel (Recommended - Fastest)
+
+1. Run the deployment command:
+```bash
+npx vercel --prod
+```
+
+2. Follow the prompts:
+   - Login with GitHub/Google/Email
+   - Select your project settings
+   - Your site will be live in seconds!
+
+3. Get your URL (typically: `https://your-project.vercel.app`)
+
+### Deploy to GitHub Pages
+
+1. Update `vite.config.js` with your repository name:
+```javascript
+export default defineConfig({
+  base: '/your-repo-name/',
+  // ... rest of config
+})
+```
+
+2. Build and deploy:
+```bash
+npm run build
+git add dist -f
+git commit -m "Deploy to GitHub Pages"
+git subtree push --prefix dist origin gh-pages
+```
+
+### Deploy to Netlify
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Drag and drop the `dist` folder to [Netlify Drop](https://app.netlify.com/drop)
+
+## Project Structure
+
+```
+ai-interior-design/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── PlatformCard.jsx
+│   │   └── QuickMatchWizard.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Compare.jsx
+│   │   └── Wizard.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── store.js
+│   └── index.css
 ├── data/
-│   └── platforms.json    # Platform data
-├── package.json          # Dependencies
-├── vite.config.js        # Vite configuration
-├── tailwind.config.js    # Tailwind setup
-├── index.html            # Entry point
-└── src/
-    ├── App.jsx           # Main app
-    ├── components/       # React components
-    │   ├── MarketGrowthHero.jsx
-    │   ├── QuickMatchWizard.jsx
-    │   ├── PlatformCard.jsx
-    │   ├── ComparisonTable.jsx
-    │   └── ROICalculator.jsx
-    ├── utils/            # Helper functions
-    ├── styles/           # CSS files
-    └── assets/           # Local assets (if any)
+│   └── platforms.json
+├── public/
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+└── README.md
 ```
 
-## 🎯 Success Metrics
-- [ ] Loads in under 2 seconds on 3G
-- [ ] Lighthouse score 95+
-- [ ] Works without JavaScript (progressive enhancement)
-- [ ] WCAG 2.1 AA accessible
-- [ ] Mobile-first responsive
-- [ ] SEO optimized
+## Data Structure
 
-## 🔗 Resources
-- [Figma Designs](https://figma.com) - Create if needed
-- [Platform Logos](https://clearbit.com/logo) - For missing logos
-- [Color Palette](https://coolors.co/c65d00-8b9a7b-d4a574-faf8f5-2c3e50)
-- [Fraunces Font](https://fonts.google.com/specimen/Fraunces)
-- [Inter Font](https://fonts.google.com/specimen/Inter)
+Each platform in `data/platforms.json` includes:
 
-## 📊 Analytics Setup
-1. Sign up for [Plausible](https://plausible.io) (30-day free trial)
-2. Add script to index.html
-3. Track key events:
-   - Wizard completion
-   - Platform comparisons
-   - External clicks
-   - ROI calculations
+- Basic info (name, tagline, URL)
+- Metrics (speed, price per render, accuracy, monthly users)
+- Pricing tiers (free, paid options)
+- Capabilities (API access, mobile app, AR preview, etc.)
+- Technology stack details
+- Best use cases
+- Limitations
+- Sample output images
 
-## 🚢 Go Live Checklist
-- [ ] All images optimized and hosted
-- [ ] Analytics configured
-- [ ] SEO meta tags added
-- [ ] Social preview cards configured
-- [ ] Performance tested
-- [ ] Accessibility tested
-- [ ] Error tracking setup (Sentry free tier)
-- [ ] Domain configured
-- [ ] SSL certificate active
-- [ ] Backup deployment ready
+## Contributing
 
-## 💡 Future Enhancements
-- User accounts for saved comparisons
-- Community gallery of designs
-- API integration with platforms
-- Affiliate revenue sharing
-- White-label version for agencies
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Disclaimer
+
+This is a personal research tool with data collected in August 2024. Please verify current pricing and features directly with each platform before making decisions.
+
+## License
+
+MIT License - feel free to use this project for your own purposes.
+
+## Author
+
+Created by Erich Owens
 
 ---
 
-**Built with ❤️ for software engineers who love beautiful homes**
+**Note**: This tool provides a comparison based on publicly available information. Always verify current features and pricing with the official platforms.
