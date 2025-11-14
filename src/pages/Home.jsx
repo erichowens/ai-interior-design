@@ -40,49 +40,99 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - Enhanced with Magic UI styling */}
+      <section className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 py-20 overflow-hidden">
+        {/* Animated background elements */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.3, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute top-10 left-10 w-72 h-72 rounded-full bg-primary/10 blur-3xl"
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.2, scale: 1 }}
+          transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+          className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-5xl font-serif font-bold text-text mb-4">
-              Find Your Perfect AI Interior Design Tool
-            </h1>
-            <p className="text-xl text-gray-600 mb-4">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 shadow-lg mb-6"
+            >
+              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-sm font-medium text-gray-700">18 AI Design Tools Compared</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-text mb-6 leading-tight"
+            >
+              Find Your Perfect <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">AI Interior Design</span> Tool
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            >
               Compare 18 platforms by speed, price, accuracy & features to make the right choice
-            </p>
-            
-            {/* Quick Stats */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="bg-white/90 backdrop-blur rounded-lg px-4 py-2 shadow-sm">
-                <span className="text-sm text-gray-600">Fastest:</span>
-                <span className="ml-2 font-semibold">12 seconds (Vizcom)</span>
+            </motion.p>
+
+            {/* Quick Stats - Enhanced with glassmorphism */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="flex flex-wrap justify-center gap-4 mb-8"
+            >
+              <div className="group bg-white/70 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/40 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <span className="text-sm text-gray-500 block">Fastest</span>
+                <span className="text-lg font-bold text-gray-900 block">12 seconds</span>
+                <span className="text-xs text-primary">(Vizcom)</span>
               </div>
-              <div className="bg-white/90 backdrop-blur rounded-lg px-4 py-2 shadow-sm">
-                <span className="text-sm text-gray-600">Cheapest:</span>
-                <span className="ml-2 font-semibold">$0.17/render</span>
+              <div className="group bg-white/70 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/40 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <span className="text-sm text-gray-500 block">Cheapest</span>
+                <span className="text-lg font-bold text-gray-900 block">$0.17</span>
+                <span className="text-xs text-primary">/render</span>
               </div>
-              <div className="bg-white/90 backdrop-blur rounded-lg px-4 py-2 shadow-sm">
-                <span className="text-sm text-gray-600">Most Accurate:</span>
-                <span className="ml-2 font-semibold">96% (Foyr Neo)</span>
+              <div className="group bg-white/70 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/40 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <span className="text-sm text-gray-500 block">Most Accurate</span>
+                <span className="text-lg font-bold text-gray-900 block">96%</span>
+                <span className="text-xs text-primary">(Foyr Neo)</span>
               </div>
-              <div className="bg-white/90 backdrop-blur rounded-lg px-4 py-2 shadow-sm">
-                <span className="text-sm text-gray-600">Most Popular:</span>
-                <span className="ml-2 font-semibold">420K users</span>
+              <div className="group bg-white/70 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/40 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <span className="text-sm text-gray-500 block">Most Popular</span>
+                <span className="text-lg font-bold text-gray-900 block">420K</span>
+                <span className="text-xs text-primary">users</span>
               </div>
-            </div>
-            
-            {/* Disclaimer */}
-            <div className="inline-flex items-center space-x-2 bg-yellow-100 rounded-full px-6 py-3 shadow-md">
+            </motion.div>
+
+            {/* Disclaimer - Enhanced */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-full px-6 py-3 shadow-lg border border-yellow-200/50 backdrop-blur-sm"
+            >
               <span className="text-2xl">ℹ️</span>
-              <span className="text-gray-700">
-                Personal research tool - Data collected August 2024 - Verify current pricing
+              <span className="text-sm font-medium text-gray-700">
+                Personal research tool · Data collected August 2024 · Verify current pricing
               </span>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -179,26 +229,66 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Use Case Recommendations */}
-      <section className="py-8 bg-gray-50">
+      {/* Use Case Recommendations - Enhanced */}
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-serif font-bold text-center mb-6">Quick Recommendations by Use Case</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white rounded-lg p-4 shadow-sm">
-              <h3 className="font-semibold mb-2">🏠 For Homeowners</h3>
-              <p className="text-sm text-gray-600 mb-2">Want to redesign with shopping links?</p>
-              <p className="text-sm font-medium text-primary">Try: Paintit.ai or DecorMatters</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm">
-              <h3 className="font-semibold mb-2">👨‍💻 For Developers</h3>
-              <p className="text-sm text-gray-600 mb-2">Need API access and fast generation?</p>
-              <p className="text-sm font-medium text-primary">Try: RoomGPT or Planner 5D</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm">
-              <h3 className="font-semibold mb-2">💼 For Professionals</h3>
-              <p className="text-sm text-gray-600 mb-2">Need CAD export and collaboration?</p>
-              <p className="text-sm font-medium text-primary">Try: Foyr Neo or HomeStyler</p>
-            </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+          >
+            Quick Recommendations by Use Case
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-105 hover:border-primary/20 transition-all duration-300"
+            >
+              <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🏠</div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors">For Homeowners</h3>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">Want to redesign with shopping links?</p>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-primary">Try:</span>
+                <span className="text-sm font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">Paintit.ai or DecorMatters</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-105 hover:border-accent/20 transition-all duration-300"
+            >
+              <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">👨‍💻</div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-accent transition-colors">For Developers</h3>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">Need API access and fast generation?</p>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-accent">Try:</span>
+                <span className="text-sm font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">RoomGPT or Planner 5D</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-105 hover:border-primary/20 transition-all duration-300"
+            >
+              <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">💼</div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors">For Professionals</h3>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">Need CAD export and collaboration?</p>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-primary">Try:</span>
+                <span className="text-sm font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">Foyr Neo or HomeStyler</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

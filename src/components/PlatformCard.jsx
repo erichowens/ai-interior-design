@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import useStore from '../store'
+import { getPlatformLogo, getPlatformSamples, capabilityIcons } from '../utils/platformIcons'
 
 const PlatformCard = ({ platform, showMatchScore = false }) => {
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -46,93 +47,105 @@ const PlatformCard = ({ platform, showMatchScore = false }) => {
 
   const renderCapabilityIcons = () => {
     const icons = []
-    if (platform.capabilities.apiAccess) icons.push({ icon: '🔧', label: 'API Access' })
-    if (platform.capabilities.mobileApp) icons.push({ icon: '📱', label: 'Mobile App' })
-    if (platform.capabilities.arPreview) icons.push({ icon: '👁️', label: 'AR Preview' })
-    if (platform.capabilities.shoppingLinks) icons.push({ icon: '🛒', label: 'Shopping' })
-    if (platform.capabilities.cadExport) icons.push({ icon: '📐', label: 'CAD Export' })
-    if (platform.capabilities['3dModeling']) icons.push({ icon: '🏗️', label: '3D Modeling' })
-    
-    return icons.slice(0, 4) // Show max 4 icons
+
+    // Build icons array based on capabilities
+    Object.keys(capabilityIcons).forEach(key => {
+      const value = platform.capabilities[key]
+      if (value) {
+        icons.push({
+          ...capabilityIcons[key],
+          value
+        })
+      }
+    })
+
+    return icons.slice(0, 6) // Show max 6 icons
   }
 
   return (
     <motion.div
-      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-      whileHover={{ y: -4 }}
+      className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl border border-gray-100/50 transition-all duration-300 group"
+      whileHover={{ y: -8, scale: 1.02 }}
       layout
     >
-      {/* Header with Match Score */}
+      {/* Header with Match Score - Enhanced */}
       {showMatchScore && platform.matchPercentage && (
-        <div className="bg-gradient-to-r from-primary to-accent text-white px-4 py-2">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="bg-gradient-to-r from-primary via-accent to-primary bg-size-200 animate-gradient text-white px-6 py-3 shadow-lg"
+        >
           <div className="flex justify-between items-center">
-            <span className="font-semibold">{platform.matchPercentage}% Match</span>
-            <span className="text-sm opacity-90">Perfect for you!</span>
+            <span className="font-bold text-lg">{platform.matchPercentage}% Match</span>
+            <span className="text-sm font-medium flex items-center gap-1">
+              Perfect for you! ✨
+            </span>
           </div>
-        </div>
+        </motion.div>
       )}
 
       <div className="p-6">
-        {/* Platform Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">
-              {!imageError ? (
-                <img
-                  src={platform.logo}
-                  alt={`${platform.name} logo`}
-                  className={`w-full h-full object-contain transition-opacity ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageError(true)}
-                />
-              ) : (
-                <span className="text-xl font-bold text-gray-400">
-                  {platform.name.charAt(0)}
-                </span>
-              )}
+        {/* Platform Header - Enhanced */}
+        <div className="flex items-start justify-between mb-6">
+          <div className="flex items-center space-x-4">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden shadow-md border border-gray-200/50 group-hover:scale-110 transition-transform duration-300">
+              <img
+                src={getPlatformLogo(platform)}
+                alt={`${platform.name} logo`}
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
             </div>
             <div>
-              <h3 className="text-xl font-serif font-bold text-text">{platform.name}</h3>
-              <p className="text-gray-600 text-sm">{platform.tagline}</p>
+              <h3 className="text-xl font-serif font-bold text-text group-hover:text-primary transition-colors">{platform.name}</h3>
+              <p className="text-gray-600 text-sm mt-0.5">{platform.tagline}</p>
             </div>
           </div>
-          
-          <button
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={handleComparisonToggle}
             disabled={!isInComparison && comparisonPlatforms.length >= 3}
-            className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-              isInComparison 
-                ? 'bg-primary text-white' 
+            className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 shadow-md ${
+              isInComparison
+                ? 'bg-gradient-to-r from-primary to-accent text-white shadow-primary/30'
                 : comparisonPlatforms.length >= 3
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-gray-100 text-gray-700 hover:bg-primary hover:text-white'
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed shadow-none'
+                : 'bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white'
             }`}
           >
-            {isInComparison ? 'Added' : 'Compare'}
-          </button>
+            {isInComparison ? '✓ Added' : '+ Compare'}
+          </motion.button>
         </div>
 
-        {/* Key Metrics */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div className="bg-gray-50 rounded-lg p-3">
-            <div className="text-sm text-gray-600">Generation Speed</div>
-            <div className={`text-lg font-semibold ${getSpeedColor(platform.metrics.speed.percentile)}`}>
+        {/* Key Metrics - Enhanced */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-4 shadow-sm border border-gray-100/50 hover:shadow-md transition-all duration-300"
+          >
+            <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Generation Speed</div>
+            <div className={`text-2xl font-bold mt-1 ${getSpeedColor(platform.metrics.speed.percentile)}`}>
               {platform.metrics.speed.value}s
             </div>
-            <div className="text-xs text-gray-500">
+            <div className="text-xs text-gray-400 mt-1">
               {platform.metrics.speed.percentile}th percentile
             </div>
-          </div>
-          
-          <div className="bg-gray-50 rounded-lg p-3">
-            <div className="text-sm text-gray-600">Monthly Users</div>
-            <div className="text-lg font-semibold text-text">
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-4 shadow-sm border border-gray-100/50 hover:shadow-md transition-all duration-300"
+          >
+            <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Monthly Users</div>
+            <div className="text-2xl font-bold text-text mt-1">
               {(platform.metrics.monthlyUsers / 1000).toFixed(0)}K
             </div>
-            <div className="text-xs text-gray-500">
+            <div className="text-xs text-gray-400 mt-1">
               Active users
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Pricing */}
@@ -144,19 +157,26 @@ const PlatformCard = ({ platform, showMatchScore = false }) => {
           </div>
         </div>
 
-        {/* Capabilities */}
+        {/* Capabilities - Enhanced */}
         <div className="mb-4">
-          <div className="text-sm text-gray-600 mb-2">Key Features</div>
+          <div className="text-sm font-medium text-gray-600 mb-3">Key Features</div>
           <div className="flex flex-wrap gap-2">
             {renderCapabilityIcons().map((cap, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-center space-x-1 bg-gray-100 rounded-full px-2 py-1 text-xs"
-                title={cap.label}
+                whileHover={{ scale: 1.05 }}
+                className="group/cap relative flex items-center space-x-1.5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl px-3 py-1.5 text-xs border border-gray-200/50 hover:shadow-md transition-all duration-300"
+                title={cap.description}
               >
-                <span>{cap.icon}</span>
-                <span className="text-gray-700">{cap.label}</span>
-              </div>
+                <span className="text-base">{cap.icon}</span>
+                <span className="text-gray-700 font-medium">{cap.label}</span>
+
+                {/* Tooltip */}
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/cap:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                  {cap.description}
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45 -mt-1"></div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -176,23 +196,24 @@ const PlatformCard = ({ platform, showMatchScore = false }) => {
         </div>
 
 
-        {/* Sample Images */}
+        {/* Sample Images - Enhanced */}
         <div className="mb-4">
-          <div className="text-sm text-gray-600 mb-2">Sample Outputs</div>
+          <div className="text-sm font-medium text-gray-600 mb-3">Sample Outputs</div>
           <div className="grid grid-cols-3 gap-2">
-            {platform.samples.slice(0, 3).map((sample, index) => (
-              <div key={index} className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative">
+            {getPlatformSamples(platform).map((sample, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden relative cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
+              >
                 <img
                   src={sample}
                   alt={`${platform.name} sample ${index + 1}`}
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  onError={(e) => {
-                    // Fallback to a placeholder if the actual image doesn't load
-                    e.target.src = `https://via.placeholder.com/400x400/e5e7eb/6b7280?text=${platform.name.replace(/\s+/g, '+')}+Sample+${index + 1}`
-                  }}
                 />
-              </div>
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300"></div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -212,22 +233,26 @@ const PlatformCard = ({ platform, showMatchScore = false }) => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="flex space-x-2">
-          <a
+        {/* Call to Action - Enhanced */}
+        <div className="flex space-x-3">
+          <motion.a
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             href={platform.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-primary text-white text-center py-2 rounded-lg hover:bg-primary/90 transition-colors font-medium"
+            className="flex-1 bg-gradient-to-r from-primary to-accent text-white text-center py-3 rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 font-semibold"
           >
-            Visit {platform.name}
-          </a>
-          <button
+            Visit {platform.name} →
+          </motion.a>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setShowDetails(!showDetails)}
-            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm"
+            className="px-5 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl hover:border-primary hover:text-primary transition-all duration-300 text-sm font-medium"
           >
-            {showDetails ? 'Show Less' : 'Learn More'}
-          </button>
+            {showDetails ? '↑ Less' : '↓ More'}
+          </motion.button>
         </div>
 
         {/* Expanded Details */}

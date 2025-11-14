@@ -13,35 +13,37 @@ const Header = () => {
   ]
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-200/50 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🏠</span>
+          {/* Logo - Enhanced */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+              <span className="text-white font-bold text-xl">🏠</span>
             </div>
             <div>
-              <h1 className="text-xl font-serif font-bold text-text">AI Design Compare</h1>
-              <p className="text-xs text-gray-600 -mt-1">Find your perfect AI interior design tool</p>
+              <h1 className="text-xl font-serif font-bold text-text group-hover:text-primary transition-colors">
+                AI Design Compare
+              </h1>
+              <p className="text-xs text-gray-500 -mt-0.5">Find your perfect AI interior design tool</p>
             </div>
           </Link>
 
-          {/* Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation - Enhanced */}
+          <div className="hidden md:flex items-center space-x-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   item.current
-                    ? 'bg-primary text-white'
-                    : 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                    ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
+                    : 'text-gray-700 hover:text-primary hover:bg-primary/5 hover:scale-105'
                 }`}
               >
                 {item.name}
                 {item.name === 'Compare' && comparisonPlatforms.length > 0 && (
-                  <span className="ml-2 bg-accent text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="inline-flex items-center justify-center bg-white text-primary text-xs font-bold rounded-full w-5 h-5 animate-pulse">
                     {comparisonPlatforms.length}
                   </span>
                 )}
@@ -49,11 +51,11 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - Enhanced */}
           <div className="md:hidden">
             <button
               type="button"
-              className="text-gray-700 hover:text-primary p-2"
+              className="text-gray-700 hover:text-primary p-2 rounded-lg hover:bg-primary/5 transition-all duration-300"
               aria-label="Menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
